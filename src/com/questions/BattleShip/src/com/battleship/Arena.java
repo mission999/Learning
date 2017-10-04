@@ -51,19 +51,20 @@ public class Arena {
 		setWeightage(new int[this.width][this.height]);
 	}
 
-	public void positionShips() {
+	public Arena buildArena() {
 		Iterator<Ships> it = getShips().iterator();
 		while (it.hasNext()) {
 			Ships cuShip = it.next();
 			if (cuShip.getType().equalsIgnoreCase(TypeStrength.P.getName())) {
-				positionShips(cuShip, TypeStrength.P.getStrength());
+				buildArena(cuShip, TypeStrength.P.getStrength());
 			} else {
-				positionShips(cuShip, TypeStrength.Q.getStrength());
+				buildArena(cuShip, TypeStrength.Q.getStrength());
 			}
 		}
+		return this;
 	}
 
-	private void positionShips(Ships cuShip, int strength) {
+	private void buildArena(Ships cuShip, int strength) {
 		int X = cuShip.getCoordinates().getX();
 		int Y = cuShip.getCoordinates().getY();
 		for (int i = 0; i < cuShip.getWidth(); i++) {

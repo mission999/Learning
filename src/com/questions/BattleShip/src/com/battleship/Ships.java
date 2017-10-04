@@ -54,4 +54,18 @@ public class Ships {
 		setCoordinates(cord);
 	}
 
+	public static Ships buildShip(String shipType, int wBS, int hBS,
+			String position) {
+		Ships ship = new Ships();
+		ship.setWidth(wBS);
+		ship.setHeight(hBS);
+		ship.setType(shipType);
+		ship.setStatus(Status.NEW.getStatus());
+		Coordinates codn = new Coordinates();
+		codn.setX(Utility.getNumericPosition(String.valueOf(position.charAt(0))));
+		codn.setY(Integer.parseInt(String.valueOf(position.charAt(1))));
+		ship.setCoordinates(codn);
+		return ship;
+	}
+	
 }
