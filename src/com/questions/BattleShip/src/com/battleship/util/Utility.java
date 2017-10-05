@@ -1,4 +1,6 @@
-package com.battleship;
+package com.battleship.util;
+
+import com.battleship.constants.Constants;
 
 public class Utility {
 	public static int getNumericPosition(String str) {
@@ -9,8 +11,8 @@ public class Utility {
 	}
 
 	public static void print(String name, String target, String aimResult) {
-		System.out.println(name + " fires a missile with target " + target
-				+ " which got " + aimResult);
+		System.out.println(name + Constants.FIRE + target + " which got "
+				+ aimResult);
 	}
 
 	public static void print(String name) {

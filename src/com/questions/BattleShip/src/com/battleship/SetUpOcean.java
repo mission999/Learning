@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.battleship;
 
 import java.util.ArrayList;
@@ -8,15 +5,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import com.battleship.constants.Constants;
+import com.battleship.model.Arena;
+import com.battleship.model.Ocean;
+import com.battleship.model.Player;
+import com.battleship.model.Ships;
+import com.battleship.util.Utility;
+
 /**
  * @author prabhn
  *
  */
 public class SetUpOcean {
 
-	/**
-	 * @param args
-	 */
 	public static Ocean setUpOcean() {
 		try (Scanner scanner = new Scanner(System.in)) {
 			String input = scanner.nextLine();
@@ -38,8 +39,8 @@ public class SetUpOcean {
 			player1Arena.setShips(lisShipP1);
 			player2Arena.setShips(lisShipP2);
 
-			Player p1 = new Player("P1");
-			Player p2 = new Player("P2");
+			Player p1 = new Player(Constants.PLAYER_1);
+			Player p2 = new Player(Constants.PLAYER_2);
 
 			p1.setArena(buildArena(player1Arena));
 			p2.setArena(buildArena(player2Arena));

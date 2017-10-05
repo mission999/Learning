@@ -1,7 +1,9 @@
-package com.battleship;
+package com.battleship.model;
 
 import java.util.Iterator;
 import java.util.List;
+
+import com.battleship.constants.TypeStrength;
 
 public class Arena {
 	private int width;
@@ -10,7 +12,7 @@ public class Arena {
 	private int[][] weightage;
 	private int weightSum;
 
-	Arena(int width, int height) {
+	public Arena(int width, int height) {
 		setWidth(width);
 		setHeight(height);
 		initializeWeight();
